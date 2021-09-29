@@ -14,7 +14,8 @@
     RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 
 
-    RewriteRule ^.*$ dist/todo/index.html [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^.* dist/todo/ [QSA,L]
 
 
 </IfModule>
