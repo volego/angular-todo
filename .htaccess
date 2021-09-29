@@ -19,7 +19,7 @@
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^.*$ - [NC,L]
 
-    RewriteRule ^(.*) /dist/todo/index.html [NC,L]
+    RewriteRule ^(.*) dist/todo/index.html [NC,L]
 
 
 </IfModule>
