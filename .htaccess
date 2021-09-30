@@ -3,4 +3,4 @@ RewriteBase /dist/todo/
 
 # если это папка или файл, открываем его
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.html [L,QSA]
+RewriteRule ^(.*)$ /$1 [L,QSA]
