@@ -1,6 +1,2 @@
 RewriteEngine On
 RewriteBase /dist/todo/
-
-# если это папка или файл, открываем его
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /$1 [L,QSA]
