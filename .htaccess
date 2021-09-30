@@ -29,4 +29,7 @@
     #RewriteCond %{REQUEST_URI} ^/(assets)
     #RewriteRule ^assets/(.*)$ dist/todo/assets/$1 [L]
     #RewriteRule ^(.*)$ dist/todo/$1 [L]
+
+    Options -Indexes
+    RewriteRule ^(.*)$ dist/todo/$1 [L,QSA]
 </IfModule>
