@@ -1,35 +1,7 @@
-<IfModule mod_rewrite.c>
-    Options +FollowSymlinks
-    RewriteEngine On
-</IfModule>
-
- # One month for most static assets
- <filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
- Header set Cache-Control "max-age=2628000, public"
- </filesMatch>
-
-<IfModule mod_rewrite.c>
-    #enable HTTPS only
-    #RewriteCond %{HTTPS} !=on
-    #RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
-
-    # without www rewrite
-    #RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
-    #RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-
-    # with wwww
-    #RewriteCond %{HTTP_HOST} ^([^www].*)$
-    #RewriteRule ^(.*)$ https://www.%1/$1 [L,R=301]
-
-    #api
-    #RewriteCond %{REQUEST_URI} ^/(api)
-    #RewriteRule ^.*$ api/web/index.php [L]
+RewriteEngine On
+RewriteBase /dist/todo/
+Options +FollowSymLinks
 
 
-    #RewriteCond %{REQUEST_URI} ^/(assets)
-    #RewriteRule ^assets/(.*)$ dist/todo/assets/$1 [L]
-    #RewriteRule ^(.*)$ dist/todo/$1 [L]
-
-    Options -Indexes
-    RewriteRule ^(.*)$ dist/todo/$1 [L,QSA]
-</IfModule>
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.html [L,QSA]
