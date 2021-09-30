@@ -3,5 +3,5 @@ RewriteBase /dist/todo/
 Options +FollowSymLinks
 
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.html [L,QSA]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#ewriteRule ^(.*)$ index.html [L,QSA]
