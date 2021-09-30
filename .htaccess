@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteBase /dist/todo/
-Options +FollowSymLinks
 
-
+# если это папка или файл, открываем его
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ $1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html [L,QSA]
